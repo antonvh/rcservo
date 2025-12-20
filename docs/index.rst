@@ -9,7 +9,6 @@ Overview
 rcservo provides a small, dependency-free API for hobby servos. It exposes:
 
 - ``Servo``: a simple class to control a servo by angle or PWM pulse width.
-- ``scale``: a helper to linearly map values between ranges.
 
 Installation
 ------------
@@ -56,32 +55,4 @@ API Reference
    :undoc-members:
    :show-inheritance:
 
-Modules
--------
 
-This project is published as a single top-level module ``rcservo``.
-
-Building the documentation
---------------------------
-
-Requirements:
-
-- Sphinx (>=4.0)
-- sphinx-rtd-theme (optional)
-
-Install the docs extras and build:
-
-.. code-block:: bash
-
-   pip install -e ".[docs]"
-   cd docs
-   make html
-
-Open the generated HTML at ``docs/_build/html/index.html``.
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

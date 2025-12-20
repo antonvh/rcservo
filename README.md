@@ -134,19 +134,6 @@ Set the servo pulse width directly.
 **Parameters:**
 - `pwm` (int or float): Pulse width in microseconds. Will be clamped between min_pulse and max_pulse.
 
-### Utility Functions
-
-#### `scale(val, src, dst)`
-
-Scale a value from one range to another.
-
-**Parameters:**
-- `val`: Value to scale
-- `src` (tuple): Source range (min, max)
-- `dst` (tuple): Destination range (min, max)
-
-**Returns:** Scaled value
-
 ## Notes
 
 - Angles are clamped to the configured min/max range

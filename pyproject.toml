@@ -31,6 +31,6 @@ dev = ["pytest>=6.0", "sphinx>=4.0", "sphinx-rtd-theme>=1.0"]
 
 [project.urls]
 Homepage = "https://github.com/antonvh/rcservo"
-Documentation = "https://github.com/antonvh/rcservo#readme"
+Documentation = "https://docs.antonsmindstorms.com/en/latest/Software/rcservo/docs/index.html"
 Repository = "https://github.com/antonvh/rcservo.git"
 Issues = "https://github.com/antonvh/rcservo/issues"
