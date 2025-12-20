@@ -61,11 +61,8 @@ Also update the image URL in `README.md` if needed:
 # Install build tools
 pip install build twine
 
-# Clean previous builds
-rm -rf build/ dist/ *.egg-info
-
-# Build the package
-python -m build
+# Clean previous builds & build
+rm -rf build/ dist/ *.egg-info && python -m build
 
 # Check contents
 ls -lh dist/
@@ -77,56 +74,13 @@ ls -lh dist/
 twine check dist/*
 ```
 
-### 4. Create a PyPI Account (if needed)
-
-Visit [https://pypi.org/account/register/](https://pypi.org/account/register/) and create an account.
-
-### 5. Generate an API Token
-
-1. Log in to your PyPI account
-2. Go to Account Settings → API Tokens
-3. Create a new API token
-4. Save it securely
-
-### 6. Configure Credentials
-
-Option A: Using `~/.pypirc` (recommended):
-
-```ini
-[distutils]
-index-servers =
-    pypi
-
-[pypi]
-repository = https://upload.pypi.org/legacy/
-username = __token__
-password = pypi_YOUR_TOKEN_HERE
-```
-
-Option B: Using environment variables:
-
-```bash
-export TWINE_USERNAME=__token__
-export TWINE_PASSWORD=pypi_YOUR_TOKEN_HERE
-```
-
-### 7. Test Upload to TestPyPI (Recommended)
-
-```bash
-twine upload --repository testpypi dist/*
-
-# Test installation
-pip install --index-url https://test.pypi.org/simple/ --no-deps rcservo
-python -c "from rcservo import Servo, scale; print('Success!')"
-```
-
-### 8. Upload to PyPI
+### 4. Upload to PyPI
 
 ```bash
 twine upload dist/*
 ```
 
-### 9. Verify the Package
+### 5. Verify the Package
 
 Visit `https://pypi.org/project/rcservo/` and verify:
 - [ ] Package name and description are correct
@@ -134,7 +88,7 @@ Visit `https://pypi.org/project/rcservo/` and verify:
 - [ ] Installation instructions work
 - [ ] Version number is correct
 
-### 10. Test Installation from PyPI
+### 6. Test Installation from PyPI
 
 ```bash
 # Create a fresh virtual environment
