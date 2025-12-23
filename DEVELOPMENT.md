@@ -2,7 +2,7 @@
 
 This document provides instructions for setting up a development environment for the `rcservo` project and contributing to it.
 
-## Prerequisites
+## Development Prerequisites
 
 - Python 3.7 or higher
 - Git
@@ -13,7 +13,7 @@ This document provides instructions for setting up a development environment for
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/rcservo.git
+git clone https://github.com/antonvh/rcservo.git
 cd rcservo
 ```
 
@@ -34,13 +34,13 @@ This installs the package in editable mode along with all development, testing, 
 
 ## Project Structure
 
-```
+``` text
 rcservo/
 ├── rcservo.py              # Main module (single-file package)
+├── package.json            # mip manifest for MicroPython installs
 ├── tests/                  # Test suite
 │   ├── __init__.py
-│   ├── test_servo.py      # Servo class tests
-│   └── test_scale.py      # Utility function tests
+│   └── test_servo.py       # Servo class tests
 ├── docs/                   # Sphinx documentation
 │   ├── conf.py
 │   ├── index.rst
@@ -77,7 +77,7 @@ pytest tests/test_servo.py -v
 
 ## Building Documentation
 
-### Prerequisites
+### Building Docs Prerequisites
 
 Documentation is already installed if you ran `pip install -e ".[dev]"`. If not:
 
@@ -107,10 +107,10 @@ start docs/_build/html/index.html  # Windows
 While `rcservo` is minimal, we recommend following PEP 8 standards:
 
 ```bash
-pip install flake8 black isort
-flake8 rcservo.py tests/
+pip install black flake8 isort
 black rcservo.py tests/
 isort rcservo.py tests/
+flake8 rcservo.py tests/
 ```
 
 ## Building the Package
@@ -123,6 +123,7 @@ python -m build
 ```
 
 This generates distribution files in `dist/`:
+
 - `rcservo-0.1.0.tar.gz` (source distribution)
 - `rcservo-0.1.0-py3-none-any.whl` (wheel)
 
@@ -201,13 +202,16 @@ Also update `__version__` in `rcservo.py` if needed.
 1. **Update version** in `pyproject.toml`
 2. **Update CHANGELOG** (if applicable)
 3. **Commit changes:**
+
    ```bash
    git add -A
    git commit -m "Bump version to 0.2.0"
    git tag v0.2.0
    git push origin main --tags
    ```
+
 4. **Build and publish:**
+
    ```bash
    python -m build
    twine upload dist/*
@@ -240,6 +244,7 @@ Also update `__version__` in `rcservo.py` if needed.
 ### Issue: `ModuleNotFoundError: No module named 'rcservo'`
 
 **Solution:** Install in editable mode:
+
 ```bash
 pip install -e .
 ```
@@ -251,6 +256,7 @@ pip install -e .
 ### Issue: Documentation won't build
 
 **Solution:** Ensure Sphinx is installed:
+
 ```bash
 pip install -e ".[docs]"
 cd docs && make clean && make html

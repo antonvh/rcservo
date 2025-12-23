@@ -13,11 +13,27 @@ rcservo provides a small, dependency-free API for hobby servos. It exposes:
 Installation
 ------------
 
-Install from PyPI:
+Standard Python (PyPI):
 
 .. code-block:: bash
 
    pip install rcservo
+
+MicroPython (recommended via mip):
+
+#. Open https://viperIDE.org and launch the IDE.
+#. Choose ``Tools`` -> ``Package Manager`` -> ``Install package via link``.
+#. Paste the manifest URL::
+
+      https://raw.githubusercontent.com/antonvh/rcservo/master/package.json
+
+#. Confirm and let mip install the files on the board.
+
+You can install the same manifest from a terminal with mpremote:
+
+.. code-block:: bash
+
+   mpremote mip install github:antonvh/rcservo
 
 Quick start
 -----------

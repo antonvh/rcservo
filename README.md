@@ -24,13 +24,29 @@ A lightweight, zero-dependency Python library for controlling **hobby servo moto
 
 ## Installation
 
-Install from PyPI:
+### Standard Python (PyPI)
 
 ```bash
 pip install rcservo
 ```
 
-### For MicroPython
+### MicroPython (recommended via mip)
+
+1. Open <https://viperIDE.org> and launch the IDE.
+2. Go to Tools > Package Manager > Install package via link.
+3. Paste the manifest URL:
+
+  <https://raw.githubusercontent.com/antonvh/rcservo/master/package.json>
+
+1. Confirm and let mip install the library on your board.
+
+You can install the same manifest from a terminal with mpremote:
+
+```bash
+mpremote mip install github:antonvh/rcservo
+```
+
+### MicroPython (manual copy)
 
 Copy `rcservo.py` to your MicroPython device:
 
@@ -114,6 +130,7 @@ servo.pwm(1500)  # Set to 1500 µs pulse
 Initialize a servo on the specified pin.
 
 **Parameters:**
+
 - `pin` (int): GPIO pin number
 - `min_pulse` (int): Minimum pulse width in microseconds. Default: 1000
 - `max_pulse` (int): Maximum pulse width in microseconds. Default: 2000
@@ -125,6 +142,7 @@ Initialize a servo on the specified pin.
 Set the servo to a specific angle.
 
 **Parameters:**
+
 - `angle` (float or int): Target angle. Will be clamped between min_angle and max_angle.
 
 #### `pwm(pwm)`
@@ -132,6 +150,7 @@ Set the servo to a specific angle.
 Set the servo pulse width directly.
 
 **Parameters:**
+
 - `pwm` (int or float): Pulse width in microseconds. Will be clamped between min_pulse and max_pulse.
 
 ## Notes
@@ -160,4 +179,4 @@ MIT License — See [LICENSE](LICENSE) file for details.
 
 ## Author
 
-**Anton Vanhoucke**
+Anton Vanhoucke
