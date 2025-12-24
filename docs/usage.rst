@@ -17,7 +17,7 @@ Import the Servo class:
 
 .. code-block:: python
 
-   from rcservo import Servo
+   from servo import Servo
 
 Create a servo instance on a GPIO pin:
 
@@ -66,7 +66,7 @@ The ``scale`` function allows you to scale values between ranges:
 
 .. code-block:: python
 
-   from rcservo import scale
+   from servo import scale
 
    # Scale 50 from range 0-100 to range 0-1
    result = scale(50, (0, 100), (0, 1))  # Returns 0.5

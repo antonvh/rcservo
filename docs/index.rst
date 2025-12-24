@@ -40,7 +40,7 @@ Quick start
 
 .. code-block:: python
 
-   from rcservo import Servo
+   from servo import Servo
 
    servo = Servo(pin=12)
    servo.angle(45)
@@ -66,7 +66,7 @@ The ``angle`` method clamps values to the configured min/max angles. The ``pwm``
 API Reference
 -------------
 
-.. automodule:: rcservo
+.. automodule:: servo
    :members:
    :undoc-members:
    :show-inheritance:

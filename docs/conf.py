@@ -10,8 +10,8 @@ sys.path.insert(0, os.path.abspath(".."))
 project = "rcservo"
 copyright = "2025, Anton Vanhoucke"
 author = "Anton Vanhoucke"
-release = "0.1.0"
-version = "0.1.0"
+release = "0.2.0"
+version = "0.2.0"
 
 # General configuration
 extensions = [

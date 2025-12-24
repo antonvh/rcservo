@@ -48,20 +48,20 @@ mpremote mip install github:antonvh/rcservo
 
 ### MicroPython (manual copy)
 
-Copy `rcservo.py` to your MicroPython device:
+Copy `servo.py` to your MicroPython device:
 
 ```bash
 # Using mpremote (Raspberry Pi Pico, etc.)
-mpremote cp rcservo.py :
+mpremote cp servo.py :
 
 # Or using ampy (ESP32, ESP8266, etc.)
-ampy --port /dev/ttyUSB0 put rcservo.py
+ampy --port /dev/ttyUSB0 put servo.py
 ```
 
 ## Quick Start
 
 ```python
-from rcservo import Servo
+from servo import Servo
 
 # Create a servo instance on GPIO pin 12
 servo = Servo(pin=12)
@@ -81,7 +81,7 @@ servo.angle(-90)
 ### Basic Initialization
 
 ```python
-from rcservo import Servo
+from servo import Servo
 
 # Default configuration (1000-2000 µs pulse width, -90 to +90 degrees)
 servo = Servo(pin=12)
