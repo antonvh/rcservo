@@ -21,7 +21,7 @@ Standard Python (PyPI):
 
 MicroPython (recommended via mip):
 
-#. Open https://viperIDE.org and launch the IDE.
+#. Open https://viper-ide.org/ and launch the IDE.
 #. Choose ``Tools`` -> ``Package Manager`` -> ``Install package via link``.
 #. Paste the manifest URL::
 
