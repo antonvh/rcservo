@@ -1,5 +1,6 @@
-rcservo
-=======
+=====================
+rcservo documentation
+=====================
 
 A minimal Python library to control hobby servo motors using PWM.
 
