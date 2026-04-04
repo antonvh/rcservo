@@ -67,7 +67,7 @@ class Servo:
             # No hardware available; nothing to do.
             return
         if pwm is None:
-             self.servo.duty_u16(0)
+            self.servo.duty_u16(0)
         else:
             pwm = min(max(pwm, self.min_pulse), self.max_pulse)
             # Convert microseconds in ~2ms frame to 16-bit duty (Raspberry Pi Pico style)
