@@ -66,7 +66,7 @@ class Servo:
         if self.servo is None:
             # No hardware available; nothing to do.
             return
-        if pwm == None:
+        if pwm is None:
              self.servo.duty_u16(0)
         else:
             pwm = min(max(pwm, self.min_pulse), self.max_pulse)
