@@ -60,14 +60,22 @@ class Servo:
         """Set servo pulse width in µs for a 2ms frame.
 
         The pulse value is clamped between configured min and max pulse widths.
+        Use None to turn off the servo.
         """
-        pwm = min(max(pwm, self.min_pulse), self.max_pulse)
         self._ensure_hw()
         if self.servo is None:
             # No hardware available; nothing to do.
             return
-        # Convert microseconds in ~2ms frame to 16-bit duty (Raspberry Pi Pico style)
-        self.servo.duty_u16(int(pwm * 3.2768))
+        if pwm is None:
+            self.servo.duty_u16(0)
+        else:
+            pwm = min(max(pwm, self.min_pulse), self.max_pulse)
+            # Convert microseconds in ~2ms frame to 16-bit duty (Raspberry Pi Pico style)
+            self.servo.duty_u16(int(pwm * 3.2768))
+
+    def off(self):
+        """Turn off the servo."""
+        self.pwm(None)
 
     def angle(self, angle: float) -> None:
         """Set servo angle. Values are capped between min_angle and max_angle."""
